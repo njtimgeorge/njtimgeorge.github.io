@@ -35,34 +35,7 @@ Github pages allow you to maintain a static website, hosted for free on
 Github. It is relatively easy. You can blog in 
 <a href="https://guides.github.com/features/mastering-markdown/">
 markdown</a>, which is a lightweight language which is certainly a standard 
-for a lot of documentation. There are also authoring tools for markdown. 
+for a lot of documentation. There are also authoring tools for markdown.
 
-# Maintaining a Blog in AWS
+I'll begin my blogging journey with github pages.
 
-Of course, we can run Wordpress in AWS and there are some easy setups. 
-Likewise, there are some easy setups for Drupal and other CMS systems.
-
-Again, these would require vigilant administration if they are made public.
-The notion of a static website like github pages in AWS is appealing. In fact,
-since AWS S3 buckets can be made public, this will make a good learning exercise. 
-I can generate a static website and make it public in an S3 bucket.
-
-# Jekyll Static Website Generator
-
-Github pages are created by <a href="https://jekyllrb.com/">Jekyll<a>, 
-a static website generator. Jekyll can be run locally as well. You can author
-content and generate the website locally. You can then upload it to your web 
-server (including an S3 bucket).
-
-# Learning exercise
-
-2. Generate a static website
-1. Check the website source into github for safe-keeping
-2. Get a start on C4 documentation by documenting the website
-3. Move it to an S3 bucket
-4. Make the bucket public
-5. Wire it to my domain
-
-I will make individual posts about the various steps as I venture into them. If 
-you want to go through a similar exercise, you don't really need your own domain,
-you can still generate a blog into an S3 bucket.
