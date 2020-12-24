@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "A Blog Post about Blogging"
+date:   2020-12-20
+categories: jekyll blog blogging
+---
+
+# Blogging
+
+From 2011-2014, I had time on my hands and decided to take up photography. I liked
+the look of High Dynamic Range (HDR), and nature in general.
+
+As I had time on my hands, I also took some solo vacations to Spain, Canada, and some more local places. 
+
+Since the hobby was about photography, I didn't want to put a while lot of thought into blogging itself. I started a Wordpress site at wordpress.com and
+started posting pictures. Eventually, I registered the domain 
+wwww.byzantinegeek.com and signed up with a hosting service. Wordpress was an
+easy way to start and remains a good tool for beginners.
+
+# Blogging in 2020
+
+There have always been blogging options: handcrafted website, Wordpress, Drupal, 
+Google sites, anything with the designation Cotent Management System (CMS).
+
+What are technical folks using for blogging these days? Wordpress is nice, but there are ads, and let's face it: security concerns. Most CMS systems are 
+feature rich, but require a vigilant administrator to prevent abuse and security 
+concerns. Also, public blogs attract a lot of spam.
+
+Looking at the landscape, it looks like a lot of technical blog content is 
+being published on 
+<a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll"> 
+Github pages<a>. 
+
+Github pages allow you to maintain a static website, hosted for free on 
+Github. It is relatively easy. You can blog in 
+<a href="https://guides.github.com/features/mastering-markdown/">
+markdown</a>, which is a lightweight language which is certainly a standard 
+for a lot of documentation. There are also authoring tools for markdown. 
+
+# Maintaining a Blog in AWS
+
+Of course, we can run Wordpress in AWS and there are some easy setups. 
+Likewise, there are some easy setups for Drupal and other CMS systems.
+
+Again, these would require vigilant administration if they are made public.
+The notion of a static website like github pages in AWS is appealing. In fact,
+since AWS S3 buckets can be made public, this will make a good learning exercise. 
+I can generate a static website and make it public in an S3 bucket.
+
+# Jekyll Static Website Generator
+
+Github pages are created by <a href="https://jekyllrb.com/">Jekyll<a>, 
+a static website generator. Jekyll can be run locally as well. You can author
+content and generate the website locally. You can then upload it to your web 
+server (including an S3 bucket).
+
+# Learning exercise
+
+2. Generate a static website
+1. Check the website source into github for safe-keeping
+2. Get a start on C4 documentation by documenting the website
+3. Move it to an S3 bucket
+4. Make the bucket public
+5. Wire it to my domain
+
+I will make individual posts about the various steps as I venture into them. If 
+you want to go through a similar exercise, you don't really need your own domain,
+you can still generate a blog into an S3 bucket.

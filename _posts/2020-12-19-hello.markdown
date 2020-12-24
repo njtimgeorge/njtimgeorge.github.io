@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Welcome to my Architecture Blog!"
+date:   2020-12-19
+categories: architecture blogging blog
+---
+
+This will be a working blog, partially for my own reference.
+
+I am studying for the AWS Associate Software Architect test. I also want to 
+understand more of the role of a software architect. As with many roles/titles,
+many organizations bestow the title of "architect" on a productive senior developer but do not develop the role beyond that. 
+What should an architect do? How is the
+skillset different from developer or designer? What tools does an architect use?
+I'll make some notes.
