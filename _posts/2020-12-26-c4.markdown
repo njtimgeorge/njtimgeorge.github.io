@@ -28,10 +28,14 @@ in 2 diagrams.
 
 The context diagram shows that we have 2 personas for the blog.
 ![blog context diagram](/images/2020/12/structurizr-61862-InitialContext.png)
+The diagram shows that we expect a user to browse the blog, and 
+an author to publish content.
 
 The container diagram shows the interactions of github and 
 github pages.
-![blog container diagram](/images/2020/12/structurizr-61862-initialContainer.png)
+![blog container diagram](/images/2020/12/structurizr-61862-initialContainer.png) 
+Here we see the components: github and github pages, and the 
+relationship between the two.
 
 While hardly earth-shattering, they can be used to introduce the 
 topic before going into the details of interaction. Said another
@@ -41,7 +45,7 @@ to further discussion.
 # structurizr
 
 These diagrams were built and exported from the [free version of
-structurizr.] (https://structurizr.com/) It provides 
+structurizr.](https://structurizr.com/) It provides 
 browser-based editors to build diagrams. Note that structurizr 
 suggests that you actually generate entities, containers, 
 and relationships prgrammatically. This will lend itself to
