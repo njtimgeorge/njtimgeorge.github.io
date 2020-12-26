@@ -31,8 +31,7 @@ The context diagram shows that we have 2 personas for the blog.
 
 The container diagram shows the interactions of github and 
 github pages.
-![blog container diagram]
-(/images/2020/12/structurizr-61862-initialContainer.png)
+![blog container diagram](/images/2020/12/structurizr-61862-initialContainer.png)
 
 While hardly earth-shattering, they can be used to introduce the 
 topic before going into the details of interaction. Said another
