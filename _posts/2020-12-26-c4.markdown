@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "C4 Modeling of Software Architectur"
+date:   2020-12-25
+categories: jekyll blog blogging
+---
+
+# What Does a System Look Like?
+
+When we're having a conversation, and we are seeking to build a 
+solution, how do we communicate the design? In my previous post,
+I described a blogging process. Do you have a picture in your head
+for the process, or is it a set of steps like a recipe? Recipes
+are easily forgotten.
+
+[C4 is a model for visualizing software architecture.](https://c4model.com/) I highly recomment [this video](https://www.youtube.com/watch?v=x2-rSnhpw0g&feature=emb_logo) as an introduction.
+
+The nice thing about C4 diagrams is that "correctness" is subjective
+and the criteria is whether the diagram clearly tells a story. In 
+many documentation standards in the past, the focus has been on 
+completeness. Architectures evolve over time, so complete designs
+must be meticulously maintained or they become outdated soon.
+
+# Architecture for this Blog
+
+The blog process from the previous post can by captured 
+in 2 diagrams.
+
+![The context diagram shows that we have 2 personas for the blog.](/images/2020/12/structurizr-61862-InitialContext.png)
+
+![The container diagram shows the interactions of github and 
+github pages.](/images/2020/12/structurizr-61862-InitialContext.png)
+
+While hardly earth-shattering, they can be used to introduce the 
+topic before going into the details of interaction. Said another
+way, they tell a (simple) story on their own and they can lead
+to further discussion.
+
+# structurizr
+
+These diagrams were built and exported from the [free version of
+structurizr.] (https://structurizr.com/) It provides 
+browser-based editors to build diagrams. Note that structurizr 
+suggests that you actually generate entities, containers, 
+and relationships prgrammatically. This will lend itself to
+automation in the future, possibly as part of a CI/CD pipeline.
