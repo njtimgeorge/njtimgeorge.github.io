@@ -8,9 +8,7 @@ title: Tim's Architecture Blog
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
     <p/>
-    
     <div class="post-entry">
       {% assign excerpt_length = site.excerpt_length | default: 50 %}
       {{ post.excerpt | strip_html | xml_escape | truncatewords: excerpt_length }}
@@ -20,6 +18,8 @@ title: Tim's Architecture Blog
         <p/>
       {% endif %}
     </div>
+
+    {% endfor %}
 
   </ul>
 </div>
