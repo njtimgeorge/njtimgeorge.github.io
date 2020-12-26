@@ -26,10 +26,13 @@ must be meticulously maintained or they become outdated soon.
 The blog process from the previous post can by captured 
 in 2 diagrams.
 
-![The context diagram shows that we have 2 personas for the blog.](/images/2020/12/structurizr-61862-InitialContext.png)
+The context diagram shows that we have 2 personas for the blog.
+![blog context diagram](/images/2020/12/structurizr-61862-InitialContext.png)
 
-![The container diagram shows the interactions of github and 
-github pages.](/images/2020/12/structurizr-61862-InitialContext.png)
+The container diagram shows the interactions of github and 
+github pages.
+![blog container diagram]
+(/images/2020/12/structurizr-61862-initialContainer.png)
 
 While hardly earth-shattering, they can be used to introduce the 
 topic before going into the details of interaction. Said another
