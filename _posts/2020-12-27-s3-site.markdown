@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "Duplicating This Blog to S3"
+date:   2020-12-27
+categories: jekyll blog blogging S3 AWS
+---
+
+As part of the learning process, let's build a static site, put 
+it in AWS S3 and make it public.
+
+Note: I'll provide pointers to certain technologies such as 
+docker or the S3 console but I won't provide step-by-step
+instructions. These topics are larger and they already have
+extensive documentation.
+
+# The Big Picture
+
+Let's add an administrator and S3 to our context diagram.
+
+![blog context diagram](/images/2020/12/structurizr-61862-S3Context.png)
+
+Here, you can see the administrator needs to clone the blog site, build it with 
+jekyll, and copy it to the S33 bucket. It's a manual process, but it's a start.
+
+The container diagram now shows jekyll and the S3 bucket:
+
+![blog container diagram](images/2020/12/structurizr-61862-S3Container.png)
+
+You can see in both diagrams that the user has a choice to browse from github
+pages or the S3 blog.
+
+# Tools
+
+- AWS CLI - the administrator will use the AWS CLI to copy the site from the local machine to an S3 bucket.
+- AWS Console - the administrator will use the S3 console to create a bucket and make it public.
+- Docker - the administrator needs a well-defined, repeatable environment to build the site in jekyll. The best way to do this is with a docker container.
+
+# The process
+
+So, to get this running, I assumed the role of administrator. Indeed, for this 
+blog, I'm the author, the administrator, and the primary user. 
+
+I installed [docker](https://www.docker.com/) on my local machine. As a reader,
+if you are studying for AWS certification or learning to be a software architect
+it is worth the time to revisit containerization in general and docker 
+specifically. Often when learning to be an effective engineer, we learn to use
+a technology to solve a particular type of problem. An architect needs to be a 
+generalist and especially needs to understand the trade-offs with any
+technology. Engineers need concrete solutions: architects need designs with 
+well-understood trade-offs.
+
+In my github repo for this blog, there is a script: util/build.sh:
+`docker run --rm -it --volume="$PWD:/srv/jekyll"  --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build`
+
+The jekyll project maintains versioned docker containers! They make life 
+easier in situations like this. In this case, we are requesting that docker
+start an container of jekyll version 3.8, downloading the image from docker hub
+first.
+
+The next software to install is the [AWS CLI](https://aws.amazon.com/cli/). 
+It's just easier to copy files from your local to an S3 bucket using 
+the command line. Also, you'll need to know the AWS CLI to be an effective 
+AWS developer or architect. 
+
+As you follow the [CLI installation instructions](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html), you'll notice that you need a 
+secret key and access key. This is a good opportunity to review your IAM 
+console for your account. You did sign up for an AWS free-tier account
+didn't you? It's really a good idea even if you have access to AWS at work.
+
+OK, so back to the administrator:
+
+1. Use the AWS S3 console to [create a new bucket and make it public](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/static-website-hosting.html).
+Note that you have to put a policy on the bucket to allow public access. My bucket is byzantinegeek-blog-architecture.
+2. Clone the site from github: 
+`$ git clone git@github.com:njtimgeorge/njtimgeorge.github.io.git`
+3. Build the site using docker: 
+`$ cd njtimgeorge.github.io`
+`$ ./util/build.sh`
+4. Copy it to the bucket:
+`$ aws s3 cp --recursive . s3://byzantinegeek-blog-architecture/`
+5. Check it out, in a browser open: `http://byzantinegeek-blog-architecture.s3-website-us-east-1.amazonaws.com/`
+
+# Follow-on Work
+
+If I were going to formalize this process, I would set up a CI/CD
+environment to:
+
+1. Periodically look for new commits to the blog repo in github
+3. Clone and build the repo
+5. Deploy to the bucket
+
+Also, there is a limitation to static websites in S3 buckets: they 
+are only available vie the HTTP protocol. If we wish to use HTTPS,
+we need to reconsider technology decisions. You could argue that this
+is a public blog and a static site, why worry about encrypting the 
+traffic? This change would be for user privacy: some users want all 
+of there browsing to be encrypted, even if all of the information is
+public.
