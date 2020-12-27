@@ -24,7 +24,7 @@ jekyll, and copy it to the S33 bucket. It's a manual process, but it's a start.
 
 The container diagram now shows jekyll and the S3 bucket:
 
-![blog container diagram](images/2020/12/structurizr-61862-S3Container.png)
+![blog container diagram](/images/2020/12/structurizr-61862-S3Container.png)
 
 You can see in both diagrams that the user has a choice to browse from github
 pages or the S3 blog.
