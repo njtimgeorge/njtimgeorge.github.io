@@ -72,13 +72,17 @@ OK, so back to the administrator:
 1. Use the AWS S3 console to [create a new bucket and make it public](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/static-website-hosting.html).
 Note that you have to put a policy on the bucket to allow public access. My bucket is byzantinegeek-blog-architecture.
 2. Clone the site from github: 
+
 `$ git clone git@github.com:njtimgeorge/njtimgeorge.github.io.git`
 3. Build the site using docker: 
+
 `$ cd njtimgeorge.github.io`
+
 `$ ./util/build.sh`
 4. Copy it to the bucket:
+
 `$ aws s3 cp --recursive . s3://byzantinegeek-blog-architecture/`
-5. Check it out, in a browser open: `http://byzantinegeek-blog-architecture.s3-website-us-east-1.amazonaws.com/`
+5. [Check it out.](http://byzantinegeek-blog-architecture.s3-website-us-east-1.amazonaws.com/)
 
 # Follow-on Work
 
