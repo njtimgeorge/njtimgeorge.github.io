@@ -93,4 +93,5 @@ So, we follow the process described
 be byzantinegeek-blog-photoblog.
 
 `$ aws s3 cp --recursive . s3://byzantinegeek-blog-photoblog/`
-5. [Check it out.](http://byzantinegeek-blog-photoblog.s3-website-us-east-1.amazonaws.com/)
+
+[Check it out.](http://byzantinegeek-blog-photoblog.s3-website-us-east-1.amazonaws.com/)
