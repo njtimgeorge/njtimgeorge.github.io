@@ -89,7 +89,7 @@ that looked good when I used run.sh locally (the script described above).
 # Create a Bucket and Copy the Site
 
 So, we follow the process described 
-[in this previous post]({% 2020-12-27-s3-site.markdown %})). The new bucket will
+[in this previous post]({% post_url 2020-12-27-s3-site %})). The new bucket will
 be byzantinegeek-blog-photoblog.
 
 `$ aws s3 cp --recursive . s3://byzantinegeek-blog-photoblog/`
