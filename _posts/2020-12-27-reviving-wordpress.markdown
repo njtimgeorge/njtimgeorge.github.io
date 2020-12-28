@@ -92,6 +92,6 @@ So, we follow the process described
 [in this previous post]({% post_url 2020-12-27-s3-site %})). The new bucket will
 be byzantinegeek-blog-photoblog.
 
-`$ aws s3 cp --recursive . s3://byzantinegeek-blog-photoblog/`
+`$ aws s3 cp --recursive . s3://photoblog.byzantinegeek.com/`
 
-[Check it out.](http://byzantinegeek-blog-photoblog.s3-website-us-east-1.amazonaws.com/)
+[Check it out.](http://photoblog.byzantinegeek.com.s3-website-us-east-1.amazonaws.com/)

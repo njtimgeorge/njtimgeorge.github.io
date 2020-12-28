@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Routing to a Custom Domain in Route 53"
+date:   2020-12-28
+categories: blog blogging S3 AWS DNS route53
+---
+
+Now that we have two public buckets, can we route from a custom domein? 
+I registered byzantinegeek.com when I had my photoblog. Let's route
+it to my public buckets.
+
+As usual, AWS has complete documentation on [how to register a custom domain.](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html).
+In addition, they have information about [routing to a static website using a custom domain](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html). 
+
+# The Configuration
+
+We will use 3 S3 buckets with websites:
+
+1. A newly created one called www.byzantinegeek.com. I'll create a website in the same way as [in this previous post]({% post_url 2020-12-27-s3-site %})).
+3. photoblog.byzantinegeek.com
+2. architecture.byzantinegeek.com
+
+Step 10 in [this document](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html) walks you through creating DNS records on Route 53. 
+
+In the end, I have 3 DNS "A" records using simple routing pointing to 3 buckets.
+
+[Try it out.](http://www.byzantinegeek.com)
