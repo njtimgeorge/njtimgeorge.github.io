@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "CIDR Mania"
+date:   2020-12-30
+categories: AWS CIDR
+---
+
+CIDR blocks, amiright? You betcha!
+
+OK, so I'm cleaning up exercise VPCs and I want to create a pristine AWS VPC 
+so I'm not doing everything in the default VPC. Not that there's anything 
+wrong with that...
+
+It's one thing to say 10.0.0.0/16 is 65,536 ip addresses while 10.0.0.0/20 is
+4096 ip addresses. Of course, you can create a giant /16 VPC and do everything
+in there. You can create several /20 VPCs with the same CIDR block, but you can
+never pair them up or route between them.
+
+Suppose you want to visualize a breakdown of 192.168.0.0/16 into several 
+non-overlapping blocks of 4096 IP addresses for future VPCs? You also need to 
+break these down to smaller chunks for the various subnets inside. 
+
+Fortunately, there's a tool that helps you determine ranges of IP addresses in
+CIDR blocks. It's just math after all...
+
+Going to [the IP adress guide](https://www.ipaddressguide.com/cidr), you can 
+plug in CIDR blocks, have them validated, and see the IP address range. It's 
+useful to visualize, but also useful to validate any plans that you might have.
+
+For example, looking at [AWS documentation that mentions CIDR blocks](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html), 
+we see that 192.168.0.0/16 is legitimate and contains 65,536 ip addresses. 
+
+Let's break that down into some /20 blocks. We'll start with 192.168.0.0/20. Starting IP is 192.168.0.0 and ending IP is 192.168.15.255. 255 is the largest 
+value for the last octet, so the next block will start at 192.168.16.0. Plug in
+192.168.16.0/20 and we get a range that ends in 192.168.31.255. Nice, now we
+can partition the space into blocks of 4096. And for subnets, we can dive
+into those blocks and partition into chunks of 16-1024. 
+
+Looking around, there are also Excel solutions (using VBA) and golang libraries.
+Perhaps in a future post, I'll explore programmatically generating 
+non-overlapping CIDR blocks. How hard could it be?
