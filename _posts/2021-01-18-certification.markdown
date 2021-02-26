@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "I Passed!"
-date:   2020-12-30
+date:   2021-01-18
 categories: AWS certification architect
 ---
 
