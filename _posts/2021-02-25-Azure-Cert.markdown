@@ -28,7 +28,7 @@ Fundamentals immediately after AWS CCP.
 
 I used resources in LinkedIN learning: 
 "Prepare for the AZ-900: Microsoft Azure Fundamentals Exam" and [the 
-official study guide.]("https://read.amazon.com/kp/card?asin=B08F5XLC3D&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_59H8XFMH32T7ZAXGE2ZN")
+official study guide.]("https://read.amazon.com/kp/embed?asin=B08F5XLC3D&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_VD475WRMCJP6CQ3JAS1A")
 
 
 
